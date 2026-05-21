@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark;
+  font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  --color-bg: #050814;
+  --color-bg-elevated: #0b142a;
+  --color-surface: #0f172a;
+  --color-surface-soft: #111c34;
+  --color-border: #1f2a44;
+  --color-border-strong: #273554;
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --color-text-soft: #64748b;
+  --color-accent: #14b8a6;
+  --color-accent-shadow: rgba(20, 184, 166, 0.28);
+  --color-positive: #34d399;
+  --color-warning: #facc15;
+  --color-danger: #ef4444;
+  --color-info: #7dd3fc;
+  --shadow-panel: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   min-height: 100%;
@@ -9,5 +37,338 @@ body {
 
 body {
   margin: 0;
+  background: radial-gradient(circle at top, #10213f, #0b142a 44%, #050814);
+  color: var(--color-text);
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.topbar {
+  background: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand-lockup {
+  display: grid;
+  gap: 2px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.subtle {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.price-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.price-pill,
+.status-pill,
+.tab-button,
+.primary-button,
+.ghost-button {
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.price-pill {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: #e2e8f0;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.price-pill strong {
+  color: var(--color-text);
+}
+
+.status-pill {
+  border: 1px solid var(--color-border);
+  background: rgba(15, 23, 42, 0.68);
+  color: #e2e8f0;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.status-pill.positive {
+  color: var(--color-positive);
+}
+
+.status-pill.warning {
+  color: var(--color-warning);
+}
+
+.status-pill.danger {
+  color: var(--color-danger);
+}
+
+.dashboard-grid {
+  min-height: 0;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.panel {
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel-title {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel-body {
+  padding: 12px;
+}
+
+.feed-list {
+  display: grid;
+  gap: 10px;
+}
+
+.intelligence-card {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg-elevated);
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  text-align: left;
+}
+
+.intelligence-card:hover {
+  background: var(--color-surface-soft);
+}
+
+.card-title {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card-meta {
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.score-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chart-surface {
+  min-height: 520px;
+  height: 100%;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #050505;
+  background-size: 48px 48px;
+  position: relative;
+}
+
+.chart-line {
+  position: absolute;
+  inset: 72px 44px 96px;
+  border-bottom: 2px solid var(--color-accent);
+  border-radius: 50%;
+  transform: skewY(-8deg);
+  box-shadow: 0 18px 50px var(--color-accent-shadow);
+}
+
+.chart-watermark {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  color: var(--color-text-soft);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: #e2e8f0;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+.tab-button.active {
+  background: var(--color-accent);
+  color: #041014;
+  border-color: transparent;
+}
+
+.primary-button {
+  border: none;
+  background: var(--color-accent);
+  color: #041014;
+  box-shadow: 0 10px 24px var(--color-accent-shadow);
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.primary-button:hover {
+  background: #2dd4bf;
+}
+
+.ghost-button {
+  border: 1px solid var(--color-border-strong);
+  background: transparent;
+  color: #e2e8f0;
+  padding: 9px 14px;
+  font-size: 14px;
+}
+
+.ghost-button:hover {
+  background: var(--color-surface-soft);
+}
+
+.settings-page {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.settings-layout {
+  display: grid;
+  gap: 16px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 20, 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+.modal {
+  width: min(720px, 94vw);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  color: var(--color-text);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.modal-body {
+  margin-top: 16px;
+  color: #e2e8f0;
+}
+
+@media (max-width: 900px) {
+  .topbar,
+  .dashboard-grid,
+  .settings-page {
+    padding: 12px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .price-strip {
+    justify-content: flex-start;
+  }
+
+  .dashboard-grid,
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-surface {
+    min-height: 360px;
+  }
+}

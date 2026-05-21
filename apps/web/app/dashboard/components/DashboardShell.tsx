@@ -4,13 +4,12 @@ import { TradingChartPanel } from "./TradingChartPanel";
 
 export function DashboardShell() {
   return (
-    <main>
+    <main className="app-shell">
       <TopPriceBar />
-      <section>
+      <section className="dashboard-grid">
         <IntelligenceFeed />
         <TradingChartPanel />
       </section>
     </main>
   );
 }
-

@@ -1,6 +1,9 @@
 import { SettingsTabs } from "./components/SettingsTabs";
 
 export default function SettingsPage() {
-  return <SettingsTabs />;
+  return (
+    <main className="settings-page">
+      <SettingsTabs />
+    </main>
+  );
 }
-

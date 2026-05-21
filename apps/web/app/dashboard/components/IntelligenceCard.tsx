@@ -1,4 +1,13 @@
 export function IntelligenceCard() {
-  return <article>Intelligence item</article>;
+  return (
+    <article className="intelligence-card">
+      <div className="score-row">
+        <span className="status-pill danger">High impact</span>
+        <span className="status-pill positive">Credible 82%</span>
+      </div>
+      <h3 className="card-title">Headline or source post flagged for market relevance</h3>
+      <p className="subtle">Detected from monitored sources and queued for review.</p>
+      <div className="card-meta">Reuters · 2 min ago · Duplicate reports: 3</div>
+    </article>
+  );
 }
-
