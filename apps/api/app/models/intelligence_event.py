@@ -10,4 +10,3 @@ class IntelligenceEvent:
     timestamp: datetime
     credibility_score: float
     relevance_score: float
-

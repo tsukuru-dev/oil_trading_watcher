@@ -6,4 +6,3 @@ class RuleRead(BaseModel):
     name: str
     query: str
     enabled: bool
-

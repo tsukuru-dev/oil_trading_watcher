@@ -6,4 +6,3 @@ class Alert:
     id: str
     intelligence_event_id: str
     severity: str
-

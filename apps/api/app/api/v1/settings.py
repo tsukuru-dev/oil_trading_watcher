@@ -6,4 +6,3 @@ router = APIRouter()
 @router.get("")
 async def get_settings() -> dict:
     return {}
-

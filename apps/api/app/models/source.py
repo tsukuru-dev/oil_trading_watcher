@@ -6,4 +6,3 @@ class Source:
     id: str
     name: str
     type: str
-

@@ -1,9 +1,13 @@
 node_modules/
+.pnpm-store/
 .next/
 .expo/
 dist/
 build/
 *.tsbuildinfo
+.turbo/
+.mypy_cache/
+.ruff_cache/
 __pycache__/
 *.pyc
 *.egg-info/

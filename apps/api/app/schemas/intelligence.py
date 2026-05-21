@@ -1,4 +1,5 @@
 from datetime import datetime
+
 from pydantic import BaseModel
 
 
@@ -10,4 +11,3 @@ class IntelligenceEventRead(BaseModel):
     credibility_score: float
     relevance_score: float
     flagged_reason: str | None = None
-

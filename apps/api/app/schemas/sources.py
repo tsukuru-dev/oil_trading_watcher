@@ -6,4 +6,3 @@ class SourceRead(BaseModel):
     name: str
     type: str
     enabled: bool
-

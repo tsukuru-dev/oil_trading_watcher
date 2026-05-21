@@ -6,4 +6,3 @@ router = APIRouter()
 @router.get("")
 async def list_rules() -> list[dict]:
     return []
-

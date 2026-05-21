@@ -6,4 +6,3 @@ class Rule:
     id: str
     name: str
     query: str
-

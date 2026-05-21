@@ -7,4 +7,3 @@ router = APIRouter()
 async def intelligence_socket(websocket: WebSocket) -> None:
     await websocket.accept()
     await websocket.close()
-
