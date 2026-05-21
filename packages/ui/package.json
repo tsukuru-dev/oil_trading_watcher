@@ -1,0 +1,9 @@
+{
+  "name": "@oil-trading-watcher/ui",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tokens/*": "./tokens/*.ts"
+  }
+}
+

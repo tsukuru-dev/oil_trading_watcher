@@ -1,0 +1,14 @@
+{
+  "name": "@oil-trading-watcher/api-client",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/client.ts",
+    "./intelligence": "./src/intelligence.ts",
+    "./alerts": "./src/alerts.ts",
+    "./sources": "./src/sources.ts",
+    "./rules": "./src/rules.ts",
+    "./prices": "./src/prices.ts"
+  }
+}
+

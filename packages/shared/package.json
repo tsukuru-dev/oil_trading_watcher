@@ -1,0 +1,11 @@
+{
+  "name": "@oil-trading-watcher/shared",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./types/*": "./types/*.ts",
+    "./constants/*": "./constants/*.ts",
+    "./utils/*": "./utils/*.ts"
+  }
+}
+

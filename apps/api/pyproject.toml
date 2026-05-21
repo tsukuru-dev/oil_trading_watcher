@@ -1,0 +1,17 @@
+[project]
+name = "oil-trading-watcher-api"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic-settings",
+  "sqlalchemy",
+  "asyncpg",
+  "alembic",
+  "redis",
+  "httpx"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
