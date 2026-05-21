@@ -1,6 +1,15 @@
 import { IntelligenceCard } from "./IntelligenceCard";
 
 export function IntelligenceFeed() {
+  const cards = [
+    "Pipeline outage rumor flagged across monitored energy desks",
+    "Shipping delay mention near key crude export terminal",
+    "OPEC delegate comment detected from verified wire source",
+    "Refinery restart chatter appears in regional trade reports",
+    "Weather disruption risk rising around Gulf infrastructure",
+    "Duplicate social reports mention storage draw expectations"
+  ];
+
   return (
     <aside className="panel">
       <div className="panel-header">
@@ -10,8 +19,9 @@ export function IntelligenceFeed() {
         </button>
       </div>
       <div className="panel-body feed-list">
-        <IntelligenceCard />
-        <IntelligenceCard />
+        {cards.map((headline) => (
+          <IntelligenceCard headline={headline} key={headline} />
+        ))}
       </div>
     </aside>
   );
