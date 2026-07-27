@@ -1,17 +1,59 @@
+# all timestamp data types will be timestamptz
 user_account
 	user_id uuid pk
 	password varchar
 
 source
 	source_id uuid pk
+	source_name varchar(100)
 	source_type enum (website, rss, social media)
-	source_credibility
+	source_credibility_rating enum("Very Poor", Poor, Average, Good, "Very Good")
+	notes text
+	created_at timestamp
+	updated_at timestamp
+
+source_social_media
+	source_id uuid pk -- source(source_id)
+	platform enum("X/Twitter", TruthSocial, BlueSky)
+	handle varchar(100)
+	keywords_filter varchar nullable
+	created_at timestamp
+	updated_at timestamp
+
+source_rss_feed
+	source_id uuid pk -- source(source_id)
+	feed_url varchar
+	publisher varchar(100)
+	created_at timestamp
+	updated_at timestamp
+
+source_websites_news
+	source_id uuid pk -- source(source_id)
+	site_url varchar nullable
+	API_key varchar nullable
+	keywords_filter varchar nullable
+	created_at timestamp
+	updated_at timestamp
+
+# Maybe I should have a keywords/filter table tbh
 
 intelligence_card
 	intelligence_card_id uuid pk
-	impact_ai_score
-	cross_reported_credibility_ai_score
+	title varchar(120)
+	summary varchar(250)
+	amalgamated_content text
+	impact_ai_score numeric
+	cross_reported_credibility_ai_score numeric
+	intelligence_source_ids uuid[] -> news_social_card(news_social_card_id)
+	created_at timestamp
+	updated_at timestamp
 
 news_social_card
 	news_social_card_id uuid pk
 	source_id uuid -> source(source_id)
+	title varchar(120)
+	summary varchar(250)
+	content text
+	url varchar
+	published_at timestamp
+	updated_at timestamp nullable # if source updated & sort is via time then take updated at time - if updated at not null/ new update then push to intelligence pipeline again
