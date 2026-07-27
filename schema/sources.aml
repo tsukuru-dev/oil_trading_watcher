@@ -1,3 +1,7 @@
+user_account
+	user_id uuid pk
+	password varchar
+
 source
 	source_id uuid pk
 	source_type enum (website, rss, social media)
@@ -5,6 +9,9 @@ source
 
 intelligence_card
 	intelligence_card_id uuid pk
-	source_id uuid -> source(source_id)
 	impact_ai_score
 	cross_reported_credibility_ai_score
+
+news_social_card
+	news_social_card_id uuid pk
+	source_id uuid -> source(source_id)

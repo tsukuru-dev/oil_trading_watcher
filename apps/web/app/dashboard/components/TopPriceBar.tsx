@@ -10,6 +10,9 @@ export function TopPriceBar() {
           <Link className="ghost-button px-3 py-1.5 text-[13px]" href="/news">
             News
           </Link>
+          <Link className="ghost-button px-3 py-1.5 text-[13px]" href="/trades">
+            My Trades
+          </Link>
         </div>
       </div>
       <div className="topbar-actions">
