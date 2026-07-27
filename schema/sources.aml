@@ -6,7 +6,7 @@ user_account
 source
 	source_id uuid pk
 	source_name varchar(100)
-	source_type enum (website, rss, social media)
+	source_type enum(website, rss, "Social Media")
 	source_credibility_rating enum("Very Poor", Poor, Average, Good, "Very Good")
 	notes text
 	created_at timestamp
