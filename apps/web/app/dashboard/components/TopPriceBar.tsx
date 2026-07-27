@@ -5,7 +5,12 @@ export function TopPriceBar() {
     <header className="topbar">
       <div className="brand-lockup">
         <p className="eyebrow">Oil Trading Watcher</p>
-        <h1 className="page-title">Market Intelligence</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="page-title">Market Intelligence</h1>
+          <Link className="ghost-button px-3 py-1.5 text-[13px]" href="/news">
+            News
+          </Link>
+        </div>
       </div>
       <div className="topbar-actions">
         <div className="price-strip" aria-label="Current prices and alerts">

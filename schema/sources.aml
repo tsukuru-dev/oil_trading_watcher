@@ -1,0 +1,10 @@
+source
+	source_id uuid pk
+	source_type enum (website, rss, social media)
+	source_credibility
+
+intelligence_card
+	intelligence_card_id uuid pk
+	source_id uuid -> source(source_id)
+	impact_ai_score
+	cross_reported_credibility_ai_score
